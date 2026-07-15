@@ -8,11 +8,22 @@ export default async function handler(request, response) {
     return response.status(405).json({ error: "Method not allowed." });
   }
 
-  if (!process.env.DATABASE_URL) {
-    return response.status(503).json({ error: "The waitlist is being configured. Please try again shortly." });
+  const connectionString =
+    process.env.DATABASE_URL ||
+    process.env.POSTGRES_URL ||
+    process.env.NEON_DATABASE_URL;
+
+  if (!connectionString) {
+    return response.status(503).json({ error: "The waitlist is temporarily unavailable. Please try again shortly." });
   }
 
-  const body = typeof request.body === "string" ? JSON.parse(request.body || "{}") : request.body || {};
+  let body = {};
+  try {
+    body = typeof request.body === "string" ? JSON.parse(request.body || "{}") : request.body || {};
+  } catch {
+    return response.status(400).json({ error: "Invalid submission." });
+  }
+
   const name = String(body.name || "").trim().slice(0, 100);
   const email = String(body.email || "").trim().toLowerCase().slice(0, 254);
   const source = String(body.source || "aionehr.com").trim().slice(0, 100);
@@ -25,7 +36,7 @@ export default async function handler(request, response) {
   if (!EMAIL_PATTERN.test(email)) return response.status(400).json({ error: "Please enter a valid email address." });
 
   try {
-    const sql = neon(process.env.DATABASE_URL);
+    const sql = neon(connectionString);
 
     await sql`
       CREATE TABLE IF NOT EXISTS waitlist (
