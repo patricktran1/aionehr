@@ -1,20 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <defs>
-    <radialGradient id="g" cx="75%" cy="20%" r="70%"><stop offset="0" stop-color="#a7ef16" stop-opacity=".20"/><stop offset="1" stop-color="#090b0c" stop-opacity="0"/></radialGradient>
-  </defs>
-  <rect width="1200" height="630" fill="#090b0c"/>
-  <rect width="1200" height="630" fill="url(#g)"/>
-  <g transform="translate(80 70)">
-    <path d="M10 74 38 14h11l28 60H63L43.5 31 24 74H10Z" fill="#f4f5f2"/>
-    <path d="M25 69 43.5 48 62 69" fill="none" stroke="#a7ef16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="25" cy="69" r="6" fill="#090b0c" stroke="#a7ef16" stroke-width="4"/>
-    <circle cx="43.5" cy="48" r="6" fill="#090b0c" stroke="#a7ef16" stroke-width="4"/>
-    <circle cx="62" cy="69" r="6" fill="#090b0c" stroke="#a7ef16" stroke-width="4"/>
-    <text x="95" y="66" font-family="Arial, sans-serif" font-size="48" font-weight="800" letter-spacing="8" fill="#f4f5f2">AION</text>
-    <text x="285" y="66" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4" fill="#a7ef16">EHR</text>
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F7F8F4"/>
+  <circle cx="1040" cy="-20" r="330" fill="#E9F0E9"/>
+  <circle cx="1080" cy="20" r="170" fill="#D9FF78" fill-opacity=".7"/>
+  <g transform="translate(92 80)">
+    <path d="M0 54 25.8 0h10.1L62 54H49.1L31 15.1 12.9 54H0Z" fill="#255F50"/>
+    <path d="m14 49 17-19 17 19" stroke="#D9FF78" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="14" cy="49" r="5" fill="#F7F8F4" stroke="#255F50" stroke-width="3"/>
+    <circle cx="31" cy="30" r="5" fill="#F7F8F4" stroke="#255F50" stroke-width="3"/>
+    <circle cx="48" cy="49" r="5" fill="#F7F8F4" stroke="#255F50" stroke-width="3"/>
   </g>
-  <text x="80" y="300" font-family="Arial, sans-serif" font-size="72" font-weight="700" letter-spacing="-3" fill="#f4f5f2">The AI-native operating</text>
-  <text x="80" y="382" font-family="Arial, sans-serif" font-size="72" font-weight="700" letter-spacing="-3" fill="#f4f5f2">system for dermatology.</text>
-  <text x="80" y="480" font-family="Arial, sans-serif" font-size="25" fill="#a3aaa5">Cut clicks. Automate workflows. Give physicians more time for patients.</text>
-  <rect x="80" y="540" width="160" height="4" rx="2" fill="#a7ef16"/>
+  <text x="175" y="123" fill="#14221D" font-family="Arial, sans-serif" font-size="43" font-weight="700" letter-spacing="7">AION</text>
+  <text x="345" y="123" fill="#255F50" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4">EHR</text>
+  <text x="92" y="294" fill="#14221D" font-family="Arial, sans-serif" font-size="72" font-weight="700">The clinical workspace</text>
+  <text x="92" y="378" fill="#14221D" font-family="Arial, sans-serif" font-size="72" font-weight="700">dermatology deserves.</text>
+  <text x="92" y="470" fill="#65716C" font-family="Arial, sans-serif" font-size="27">AI-native documentation, coding, follow-up, and practice flow.</text>
+  <rect x="92" y="523" width="237" height="55" rx="27.5" fill="#255F50"/>
+  <text x="132" y="558" fill="white" font-family="Arial, sans-serif" font-size="19" font-weight="700">JOIN THE WAITLIST</text>
 </svg>
