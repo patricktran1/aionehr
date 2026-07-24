@@ -1,6 +1,5 @@
 import { neon } from "@neondatabase/serverless";
-
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+import { validateWaitlistSubmission } from "../lib/waitlist-validation.js";
 
 export default async function handler(request, response) {
   if (request.method !== "POST") {
@@ -17,23 +16,15 @@ export default async function handler(request, response) {
     return response.status(503).json({ error: "The waitlist is temporarily unavailable. Please try again shortly." });
   }
 
-  let body = {};
-  try {
-    body = typeof request.body === "string" ? JSON.parse(request.body || "{}") : request.body || {};
-  } catch {
-    return response.status(400).json({ error: "Invalid submission." });
+  const validation = validateWaitlistSubmission(request.body);
+  if (!validation.accepted) {
+    return response.status(validation.status).json({ error: validation.error });
   }
 
-  const name = String(body.name || "").trim().slice(0, 100);
-  const email = String(body.email || "").trim().toLowerCase().slice(0, 254);
-  const source = String(body.source || "aionehr.com").trim().slice(0, 100);
-  const honeypot = String(body.company || "").trim();
-
   // Silently accept bot submissions captured by the hidden field.
-  if (honeypot) return response.status(200).json({ ok: true });
+  if (validation.bot) return response.status(200).json({ ok: true });
 
-  if (name.length < 2) return response.status(400).json({ error: "Please enter your name." });
-  if (!EMAIL_PATTERN.test(email)) return response.status(400).json({ error: "Please enter a valid email address." });
+  const { name, email, source } = validation.submission;
 
   try {
     const sql = neon(connectionString);
