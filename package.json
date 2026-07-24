@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "scripts": {
+    "check": "node --check api/waitlist.js && node --check lib/waitlist-validation.js && node --check script.js",
+    "test": "node --test test/*.test.js",
+    "test:coverage": "node --experimental-test-coverage --test test/*.test.js",
+    "validate": "npm run check && npm test"
+  },
   "engines": {
     "node": ">=20"
   },
