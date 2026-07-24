@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: aionehr-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Audit high-severity dependencies
+        run: npm audit --audit-level=high
+
+      - name: JavaScript syntax validation
+        run: npm run check
+
+      - name: Waitlist regression tests
+        run: npm test
+
+      - name: Native coverage
+        run: npm run test:coverage | tee coverage.txt
+
+      - name: Upload coverage summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aionehr-waitlist-coverage
+          path: coverage.txt
+          if-no-files-found: warn
+          retention-days: 14
