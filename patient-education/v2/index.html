@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f7f2" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>AION Takehome v2 | Patient Education</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="AION Takehome home">
+      <span class="mark">A</span>
+      <span>AION <b>TAKEHOME</b></span>
+    </a>
+    <div class="top-actions">
+      <button class="ghost" id="practiceButton" type="button">Practice settings</button>
+      <button class="dark hidden patient-action" id="printButton" type="button">Print</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="libraryView" class="library-view">
+      <div class="hero shell">
+        <div>
+          <div class="eyebrow">Patient education, rebuilt</div>
+          <h1>Useful after the visit.</h1>
+          <p>Concise dermatology education built from physician source material, then rewritten and checked against current guidance.</p>
+        </div>
+        <div class="hero-card">
+          <span class="hero-card-label">CONTENT MODEL</span>
+          <strong>Physician source → evidence update → patient language → clinician review</strong>
+          <small>No scraped competitor handouts. No copied legacy prose.</small>
+        </div>
+      </div>
+
+      <section class="shell library-section" id="library">
+        <div class="library-head">
+          <div>
+            <div class="eyebrow">Modernized library</div>
+            <h2>Start with the highest-yield handouts.</h2>
+          </div>
+          <label class="search-wrap">
+            <span>Search</span>
+            <input id="searchInput" type="search" placeholder="Acne, rosacea, hives…" autocomplete="off" />
+          </label>
+        </div>
+        <div class="filters" id="filters"></div>
+        <div class="topic-grid" id="topicGrid"></div>
+        <p class="empty hidden" id="emptyState">No handouts match that search.</p>
+      </section>
+    </section>
+
+    <article id="patientView" class="patient-view hidden">
+      <div class="patient-shell">
+        <header class="handout-header">
+          <div>
+            <div class="practice-name" data-practice>Dermatology Practice</div>
+            <div class="physician-name" data-physician>Your dermatology team</div>
+          </div>
+          <a class="back-link" href="./">← All handouts</a>
+        </header>
+
+        <div class="topic-kicker" id="topicCategory"></div>
+        <h1 id="topicTitle"></h1>
+        <p class="lead" id="topicSummary"></p>
+
+        <section class="plan-slot">
+          <div>
+            <span class="section-number">TODAY</span>
+            <h2>Your treatment plan</h2>
+          </div>
+          <p>This page explains the condition. Your clinician’s specific medication, dose, frequency, and follow-up instructions should take priority over general education.</p>
+        </section>
+
+        <section class="handout-section">
+          <div><span class="section-number">01</span><h2>What it is</h2></div>
+          <p id="topicMeaning"></p>
+        </section>
+
+        <section class="handout-section two-col">
+          <div class="section-block"><span class="section-number">02</span><h2>What you may notice</h2><ul id="topicNotice"></ul></div>
+          <div class="section-block"><span class="section-number">03</span><h2>How it is treated</h2><ul id="topicTreatment"></ul></div>
+        </section>
+
+        <section class="handout-section two-col">
+          <div class="section-block"><span class="section-number">04</span><h2>What helps at home</h2><ul id="topicHome"></ul></div>
+          <div class="section-block attention"><span class="section-number">05</span><h2>Contact us sooner if</h2><ul id="topicCall"></ul></div>
+        </section>
+
+        <section class="evidence-card">
+          <div>
+            <span class="section-number">CONTENT REVIEW</span>
+            <strong id="reviewLine"></strong>
+            <p id="reviewNote"></p>
+          </div>
+          <div class="source-links" id="sourceLinks"></div>
+        </section>
+
+        <footer class="handout-footer">
+          <p>General educational information only. It does not replace individualized medical advice, diagnosis, or treatment.</p>
+          <a class="book-link hidden" id="bookingLink" target="_blank" rel="noopener noreferrer">Contact / book</a>
+        </footer>
+      </div>
+    </article>
+  </main>
+
+  <dialog id="practiceDialog">
+    <form method="dialog" id="practiceForm">
+      <div class="dialog-head"><div><div class="eyebrow">Prototype settings</div><h2>Practice branding</h2></div><button class="icon-button" value="cancel" aria-label="Close">×</button></div>
+      <label>Practice name<input id="practiceNameInput" maxlength="90" placeholder="Example Dermatology" /></label>
+      <label>Physician / team line<input id="physicianNameInput" maxlength="90" placeholder="Patrick Tran, MD" /></label>
+      <label>Booking or contact URL<input id="bookingUrlInput" type="url" placeholder="https://…" /></label>
+      <div class="dialog-actions"><button class="ghost" value="cancel">Cancel</button><button class="dark" id="saveSettings" value="default">Save</button></div>
+    </form>
+  </dialog>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
