@@ -1,0 +1,32 @@
+{
+  "sourceCollection": "PT info + derm lists",
+  "sourceOwner": "Walter Barkey, MD",
+  "policy": "Use as physician source material and provenance only. Do not republish legacy prose verbatim. Independently rewrite, update against current evidence, and complete clinician review before patient-facing production use.",
+  "modernized": [
+    {"title":"Acne 2019","driveId":"1Al1iyooklygltKbcaEzhVqlG9HtKb0jHakrf_IAnlKc","aionSlug":"acne","status":"draft-modernized"},
+    {"title":"Seb Derm 2019","driveId":"1vU7LN8WkjYjWMes2KVPpJd3G9-0wA4-BNE1IgjxFdNU","aionSlug":"seborrheic-dermatitis","status":"draft-modernized"},
+    {"title":"Rosacea (Feb 2019)","driveId":"19a6H60ENveBmI08W0sHs5E7HzIttHptq9taj-vgLvBM","aionSlug":"rosacea","status":"draft-modernized"},
+    {"title":"Tinea Versicolor 2022","driveId":"1LIkQiFT4WQwk_AH1CCHU5dcqxKVsqK8Awh53WNsA41k","aionSlug":"tinea-versicolor","status":"draft-modernized","copyrightNoticeObserved":true},
+    {"title":"Urticaria 2023","driveId":"10AsTbwJZui6QnciHOs9gDU1GwsbxtjHMkuOuq4eRXLY","aionSlug":"urticaria-hives","status":"draft-modernized","copyrightNoticeObserved":true}
+  ],
+  "queue": [
+    {"title":"Rhus dermatiitis (\"Poison Ivy\") 2020","driveId":"1YdYfQ3PnMPGIfeCh6k3K6V8o9IL6XUqsc9qhLpmYP54"},
+    {"title":"Pityriasis Rosea 2019","driveId":"1lFAPzvhybjgPQ6fNCO_AoofiE62Jjcag55nkOG4gI7I"},
+    {"title":"Paronychia 2019","driveId":"1nVZ9QfsnefEHLoWCXs-hEEzX4zRJFaJs7GfAKHg4X04"},
+    {"title":"Polymorphous Light Eruption (PMLE) 2022","driveId":"1qk9RH-QXcP7wAryTFZGRxeEcgYrQcCP1Mu4dEEa2rqs"},
+    {"title":"Methotrexate 2024","driveId":"1FYmUjaRmAjADadYnXb3SOuEFVf8eoOGl01tNDziIMvg"},
+    {"title":"Myxoid Cyst 2019","driveId":"1pepVKK9wHJlLMZ-MzNlyqVjBbe9gIMc2a3THU9LwA1U"},
+    {"title":"Melanoma Post diagnosis 2022","driveId":"1XDNrfzVxhuVUcmUPoIhgi0Aec6KXhjk6M6UPkg-M_nY"},
+    {"title":"Shingrix / Shingles 2022","driveId":"1SwK5hs-l-nYBqAJHNujjG5T1mtdaliDM2cb4-GMS3q8"},
+    {"title":"Propecia 2019 November","driveId":"1DsryWFg7VKUvqACWg1PpcoAZEU8bFUlSBzDHPSNdvI4"},
+    {"title":"MRSA Infections 2022","driveId":"1Are0A3UX471xMIDlhgd5xnpv93tHITtk5gDTfF3hyqA"},
+    {"title":"Retinoids for Acne 2019","driveId":"15x-WsRlI7bxNYgC07CcL7rjaWo5CYFnQgIzi0l1UlK0"},
+    {"title":"Accutane 2019","driveId":"1S1GPrbTnZEwf3Z6OzRgbkGMGpUrCLRof6QWQ5-78tOA"},
+    {"title":"Spironolactone 2020","driveId":"1Oqim_2Kcg7Q5FQ_ETc9UCZmAMY7eQm18v_w1RLA-2us"},
+    {"title":"Hidradenitis Suppurativa 2022","driveId":"1_TvTbwgvSgXJySRrfg-j_O-1T2FYB4LUkviZyu-W930"},
+    {"title":"Perioral derm 2019","driveId":"1PnKZv3rEa1VLw9TVUNPxsh1Z0UmDtSJBkbPZax8NaRs"},
+    {"title":"Keratosis Pilaris 2020","driveId":"1OuDTQnC7y-kQeXCaoGH1mZdeT4L3RjgNpIzHHQcRX34"},
+    {"title":"Androgenetic alopecia 2019","driveId":"1nGUyGAVOCHqftx5e2k_JOPgHmct_1DtbrDEdWbSqCEA"},
+    {"title":"Minocycline 2021","driveId":"1NpHBItge6H6_wCZrcmeXLTcEYDSQKz_pEporQGaBLgM"}
+  ]
+}
