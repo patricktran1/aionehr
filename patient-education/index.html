@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f7f2" />
+  <meta name="description" content="AION Takehome is a dermatology-native patient education layer for fast, branded, source-grounded handouts." />
+  <title>AION Takehome | Dermatology patient education</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="./" aria-label="AION Takehome home">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M10 52 28.4 12h7.2L54 52h-9.2L32 23.2 19.2 52H10Z" fill="currentColor"/>
+          <path d="M20 48 32 34l12 14" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="20" cy="48" r="4"/><circle cx="32" cy="34" r="4"/><circle cx="44" cy="48" r="4"/>
+        </svg>
+        <span class="brand-word">AION</span>
+        <span class="brand-product">TAKEHOME</span>
+      </a>
+      <div class="nav-actions">
+        <button class="ghost-button" id="practiceSettingsBtn" type="button">Practice setup</button>
+        <a class="dark-button" href="#library" id="libraryNavLink">Open library</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="marketingView">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <div class="eyebrow">Dermatology patient education, rebuilt</div>
+        <h1>The visit should leave with the patient.</h1>
+        <p class="hero-lede">Pull up the right dermatology topic in seconds. Print it, share it, or let the patient scan it. Every page is source-grounded, branded to the practice, and built for the actual rhythm of clinic.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#library">Browse the library <span>→</span></a>
+          <a class="text-link" href="?topic=melasma">Open a patient page</a>
+        </div>
+        <div class="hero-proof">
+          <span>No patient login</span><i></i><span>No PHI required</span><i></i><span>Print + QR + share</span>
+        </div>
+      </div>
+
+      <div class="hero-preview" aria-label="AION Takehome patient handout preview">
+        <div class="preview-window">
+          <div class="preview-topbar">
+            <div><span class="preview-dot"></span><strong id="previewPracticeName">AION Dermatology</strong></div>
+            <span class="preview-book">Book visit</span>
+          </div>
+          <div class="preview-body">
+            <div class="topic-kicker">PATIENT EDUCATION</div>
+            <div class="preview-title-row">
+              <div>
+                <h2>Melasma</h2>
+                <p>Dark patches on the face that are often influenced by sun, visible light, heat, and hormones.</p>
+              </div>
+              <div class="fake-qr" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+            <div class="preview-section">
+              <small>WHAT THIS MEANS</small>
+              <p>Melasma is common and harmless, but it can be persistent. Treatment usually combines daily light protection with a personalized skin-care plan.</p>
+            </div>
+            <div class="preview-section compact">
+              <small>AT HOME</small>
+              <div class="preview-lines"><b></b><b></b><b></b></div>
+            </div>
+          </div>
+          <div class="preview-footer"><span>Print</span><span>Scan</span><span>Share</span><strong>EN / ES</strong></div>
+        </div>
+        <div class="preview-caption">Concept interface · clinician review required before production use</div>
+      </div>
+    </section>
+
+    <section class="signal-strip">
+      <div class="shell signal-grid">
+        <div><strong>Fast at point of care</strong><span>Search, open, hand off.</span></div>
+        <div><strong>Practice-branded</strong><span>Your name and booking link.</span></div>
+        <div><strong>Source-grounded</strong><span>References live on every topic.</span></div>
+        <div><strong>Built to expand</strong><span>Visit-specific plans are next.</span></div>
+      </div>
+    </section>
+
+    <section class="workflow shell">
+      <div class="section-heading">
+        <div class="eyebrow">A clean handoff</div>
+        <h2>Three steps. No portal ceremony.</h2>
+        <p>Patient education should be the final layer of the visit, not another workflow that creates work for the staff.</p>
+      </div>
+      <div class="workflow-grid">
+        <article><span>01</span><h3>Find the topic</h3><p>Search by diagnosis, condition, procedure, or plain-language term.</p></article>
+        <article><span>02</span><h3>Hand it off</h3><p>Print a clean one-page version, share the page, or let the patient scan the QR code.</p></article>
+        <article><span>03</span><h3>Bring them back</h3><p>Every patient page carries the practice identity and booking destination you set.</p></article>
+      </div>
+    </section>
+
+    <section class="library-section" id="library">
+      <div class="shell">
+        <div class="library-heading">
+          <div>
+            <div class="eyebrow">Prototype library</div>
+            <h2>Common dermatology, ready in seconds.</h2>
+          </div>
+          <p>This first build includes a focused set of high-volume conditions. The data model is designed to scale to the full library.</p>
+        </div>
+
+        <div class="library-toolbar">
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input id="topicSearch" type="search" placeholder="Search acne, skin cancer, hair loss…" autocomplete="off" />
+          </label>
+          <div class="filters" id="categoryFilters" role="group" aria-label="Filter topics by category"></div>
+        </div>
+
+        <div class="topic-grid" id="topicGrid"></div>
+        <p class="empty-state" id="emptyState" hidden>No matching topics yet.</p>
+      </div>
+    </section>
+
+    <section class="differentiator shell">
+      <div class="differentiator-card">
+        <div>
+          <div class="eyebrow">Where AION can go further</div>
+          <h2>Generic education is useful. The actual plan is better.</h2>
+          <p>The next layer can merge the clinician-reviewed visit plan, medication instructions, wound care, follow-up timing, and the right education into one patient-facing page. That is the bridge from a handout library to a true after-visit operating layer.</p>
+        </div>
+        <div class="future-stack" aria-label="Future AION Takehome workflow">
+          <span>Diagnosis education</span>
+          <span>Today’s treatment plan</span>
+          <span>Medication instructions</span>
+          <span>Follow-up + booking</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <main id="topicView" class="topic-view" hidden>
+    <div class="patient-shell">
+      <section class="patient-header">
+        <a class="back-link" href="./">← Library</a>
+        <div class="patient-brand-row">
+          <div>
+            <div class="practice-label">PATIENT EDUCATION FROM</div>
+            <h1 id="patientPracticeName">AION Dermatology</h1>
+            <p id="patientPhysicianName">Your dermatology team</p>
+          </div>
+          <a id="bookButton" class="book-button" href="#" target="_blank" rel="noopener">Book / contact</a>
+        </div>
+      </section>
+
+      <section class="patient-actions no-print">
+        <div class="language-switch" id="languageSwitch" aria-label="Choose language"></div>
+        <div class="action-buttons">
+          <button id="printButton" type="button">Print</button>
+          <button id="shareButton" type="button">Share</button>
+        </div>
+      </section>
+
+      <article class="handout" id="handout">
+        <div class="handout-hero">
+          <div>
+            <div class="category-badge" id="topicCategory"></div>
+            <h2 id="topicTitle"></h2>
+            <p class="topic-summary" id="topicSummary"></p>
+          </div>
+          <div class="qr-card">
+            <img id="qrImage" alt="QR code to open this patient education page" />
+            <span id="qrCaption">Scan to reopen</span>
+          </div>
+        </div>
+
+        <div class="handout-grid">
+          <section class="handout-section">
+            <span class="section-number">01</span>
+            <div><h3 id="meaningHeading">What this means</h3><p id="topicMeaning"></p></div>
+          </section>
+          <section class="handout-section">
+            <span class="section-number">02</span>
+            <div><h3 id="noticeHeading">What you may notice</h3><ul id="topicNotice"></ul></div>
+          </section>
+          <section class="handout-section">
+            <span class="section-number">03</span>
+            <div><h3 id="treatmentHeading">What treatment may involve</h3><ul id="topicTreatment"></ul></div>
+          </section>
+          <section class="handout-section">
+            <span class="section-number">04</span>
+            <div><h3 id="homeHeading">What you can do at home</h3><ul id="topicHome"></ul></div>
+          </section>
+          <section class="handout-section alert-section">
+            <span class="section-number">05</span>
+            <div><h3 id="callHeading">Contact your dermatologist sooner if</h3><ul id="topicCall"></ul></div>
+          </section>
+        </div>
+
+        <section class="source-block">
+          <div><strong id="sourceHeading">Source used for this prototype</strong><p id="reviewNote">Clinician review is required before using this prototype as production patient education.</p></div>
+          <a id="sourceLink" href="#" target="_blank" rel="noopener">View source ↗</a>
+        </section>
+      </article>
+
+      <footer class="patient-footer">
+        <p id="disclaimerText">This page provides general education only. It is not a diagnosis or a substitute for medical advice from your dermatologist. If you have an urgent or life-threatening problem, seek emergency care.</p>
+        <span>AION Takehome · prototype</span>
+      </footer>
+    </div>
+  </main>
+
+  <dialog class="settings-dialog" id="settingsDialog">
+    <form method="dialog" class="settings-card" id="settingsForm">
+      <div class="settings-heading">
+        <div><div class="eyebrow">Local prototype settings</div><h2>Brand the handouts.</h2></div>
+        <button class="icon-button" value="cancel" aria-label="Close settings">×</button>
+      </div>
+      <label>Practice name<input id="practiceNameInput" name="practiceName" type="text" maxlength="80" placeholder="AION Dermatology" /></label>
+      <label>Physician / team line<input id="physicianNameInput" name="physicianName" type="text" maxlength="100" placeholder="Patrick Tran, MD, FAAD" /></label>
+      <label>Booking or contact URL<input id="bookingUrlInput" name="bookingUrl" type="url" placeholder="https://yourpractice.com/book" /></label>
+      <p>These demo settings stay in this browser only. No patient data is collected.</p>
+      <div class="settings-actions"><button value="cancel" class="secondary-button">Cancel</button><button id="saveSettingsButton" value="default" class="primary-button">Save settings</button></div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
